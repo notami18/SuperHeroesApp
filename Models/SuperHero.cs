@@ -9,27 +9,19 @@ namespace SuperHeroesApp.Models
 {
     internal class SuperHero
     {
-        private string? _Name;
+        private string? _name;
         public int Id;
         public string? Name
         {
-            get
-            {
-                return _Name;
-            }
-            set
-            {
-                _Name = value?.Trim();
-            }
+            get => _name;
+            set => _name = value?.Trim();
         }
         public string? SecretIdentity;
 
         public string NombreEIdentidadSerecreta
         {
-            get
-            {
-                return $"{Name} ({SecretIdentity})";
-            }
+            get => $"{Name} ({SecretIdentity})";
+
         }
 
         public string? City;
@@ -42,7 +34,6 @@ namespace SuperHeroesApp.Models
             SuperPowers = new List<SuperPower>();
             Flying = false;
         }
-
         public string UseSuperHero()
         {
             StringBuilder sb = new();
