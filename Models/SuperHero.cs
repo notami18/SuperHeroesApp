@@ -23,7 +23,6 @@ namespace SuperHeroesApp.Models
             get => $"{Name} ({SecretIdentity})";
 
         }
-        // public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public string? City;
         public List<SuperPower>? SuperPowers;
@@ -49,6 +48,12 @@ namespace SuperHeroesApp.Models
         public override string SaveTheWorld()
         {
             return $"{NombreEIdentidadSerecreta} ha salavado el fuckn world";
+        }
+
+        public override string SalvarLaTierra()
+        {
+            // return base.SalvarLaTierra();
+            return $"{NombreEIdentidadSerecreta} ha salvado la tierra !!!";
         }
     }
 }

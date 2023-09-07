@@ -10,7 +10,7 @@ namespace SuperHeroesApp.Models
     {
         public abstract string Name { get; set; }
         public abstract string SaveTheWorld();
-        public string SalvarLaTierra()
+        public virtual string SalvarLaTierra()
         {
             return $"{Name} ha salvado la tierra";
         }
