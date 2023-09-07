@@ -38,11 +38,11 @@ namespace SuperHeroesApp.Models
         public string UseSuperHero()
         {
             StringBuilder sb = new();
-            if (SuperPowers != null && SuperPowers.Count > 0)
-                foreach (var power in SuperPowers)
-                {
-                    sb.AppendLine($"{NombreEIdentidadSerecreta} esta usando el súper poder {power.Name} !!");
-                }
+            // if (SuperPowers != null && SuperPowers.Count > 0)
+            foreach (var power in SuperPowers!)
+            {
+                sb.AppendLine($"{NombreEIdentidadSerecreta} esta usando el súper poder {power.Name} !!");
+            }
             return sb.ToString();
         }
 
