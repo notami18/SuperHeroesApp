@@ -70,6 +70,11 @@ internal class Program
 
         string resultSuperPower = superMan.UseSuperHero();
         Console.WriteLine(resultSuperPower);
+        string resultSalvarMundo = superMan.SaveTheWorld();
+        Console.WriteLine(resultSalvarMundo);
+
+        string resultSalvarTierra = superMan.SalvarLaTierra();
+        Console.WriteLine(resultSalvarTierra);
 
         var wolverine = new AntiHero()
         {
