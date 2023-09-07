@@ -49,7 +49,21 @@ internal class Program
             SuperPowers = supermanPower
         };
 
-        var resultSuperPower = superMan.UseSuperHero();
+        var superMan2 = new SuperHero
+        {
+            Id = 1,
+            Name = "Superman",
+            SecretIdentity = "Clark Kent",
+            City = "Metropolis",
+            Flying = true
+        };
+        Console.WriteLine(superMan == superMan2);
+
+        SuperHeroRecord superHeroRecord = new(1, "superman", "Clark Kent");
+        SuperHeroRecord superHeroRecord2 = new(1, "superman", "Clark Kent");
+        Console.WriteLine(superHeroRecord == superHeroRecord2);
+
+        string resultSuperPower = superMan.UseSuperHero();
         Console.WriteLine(resultSuperPower);
     }
 }
@@ -103,3 +117,5 @@ enum LevelPower
     LevelFour,
     LevelFive,
 }
+
+public record SuperHeroRecord(int Id, string? Name, string? SecretIdentity);
