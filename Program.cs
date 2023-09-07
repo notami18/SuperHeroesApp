@@ -1,36 +1,58 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Text;
 
-var canFly = new SuperPower
+internal class Program
 {
-    Name = "Volar",
-    Description = "Capacidad de poder volar y planear en el aire",
-    Level = LevelPower.LevelTwo
-};
+    private static void Main(string[] args)
+    {
+        var canFly = new SuperPower
+        {
+            Name = "Volar 🥏",
+            Description = "Capacidad de poder volar y planear en el aire",
+            Level = LevelPower.LevelTwo
+        };
 
-var superPower = new SuperPower
-{
-    Name = "Super Fuerza",
-    Level = LevelPower.LevelFive
-};
+        var superPower = new SuperPower
+        {
+            Name = "Super Fuerza 💪",
+            Level = LevelPower.LevelFive
+        };
 
+        var xRayVision = new SuperPower
+        {
+            Name = "Rayos X 🩻",
+            Description = "Capacidad de poder ver atravez de las paredes",
+            Level = LevelPower.LevelThree
+        };
 
+        var speed = new SuperPower
+        {
+            Name = "Velocidad ⚡️",
+            Description = "Capacidad de poder ir mas rapido que el propio flash 🦸🏽",
+            Level = LevelPower.LevelFour
+        };
 
-List<SuperPower> supermanPower = new()
-{
-    canFly,
-    superPower
-};
+        List<SuperPower> supermanPower = new()
+        {
+            canFly,
+            superPower,
+            xRayVision,
+            speed
+        };
 
-var superMan = new SuperHero
-{
-    Id = 1,
-    Name = "Sperma",
-    SecretIdentity = "Clark Kent",
-    City = "Metropolis",
-    Flying = true,
-    SuperPowers = supermanPower
-};
+        var superMan = new SuperHero
+        {
+            Id = 1,
+            Name = "Superman",
+            SecretIdentity = "Clark Kent",
+            City = "Metropolis",
+            Flying = true,
+            SuperPowers = supermanPower
+        };
+
+        var resultSuperPower = superMan.UseSuperHero();
+        Console.WriteLine(resultSuperPower);
+    }
+}
 
 class SuperHero
 {
@@ -46,6 +68,17 @@ class SuperHero
         Id = 1;
         SuperPowers = new List<SuperPower>();
         Flying = false;
+    }
+
+    public string UseSuperHero()
+    {
+        StringBuilder sb = new();
+        if (SuperPowers != null && SuperPowers.Count > 0)
+            foreach (var power in SuperPowers)
+            {
+                sb.AppendLine($"{Name} esta usando el súper poder {power.Name} !!");
+            }
+        return sb.ToString();
     }
 }
 
