@@ -31,12 +31,31 @@ internal class Program
             Level = LevelPower.LevelFour
         };
 
+
+        var regenerate = new SuperPower
+        {
+            Name = "Regeneracion 💥",
+            Level = LevelPower.LevelFive
+        };
+
+        var superPowerWolverine = new SuperPower
+        {
+            Name = "Super Fuerza 💥",
+            Level = LevelPower.LevelFive
+        };
+
         List<SuperPower> supermanPower = new()
         {
             canFly,
             superPower,
             xRayVision,
             speed
+        };
+
+        List<SuperPower> wolverinePower = new()
+        {
+            regenerate,
+            superPowerWolverine
         };
 
         var superMan = new SuperHero
@@ -51,6 +70,21 @@ internal class Program
 
         string resultSuperPower = superMan.UseSuperHero();
         Console.WriteLine(resultSuperPower);
+
+        var wolverine = new AntiHero()
+        {
+            Id = 5,
+            Name = "Wolverine",
+            SecretIdentity = "Logan",
+            Flying = false,
+            SuperPowers = wolverinePower
+        };
+
+        string resultSuperPowerWolverine = wolverine.UseSuperHero();
+        Console.WriteLine($"{resultSuperPowerWolverine}");
+
+        string actionAntiHero = wolverine.PerformAntiHeroAction("Acata la policia");
+        Console.WriteLine(actionAntiHero);
     }
 }
 
