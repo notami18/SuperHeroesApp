@@ -14,14 +14,7 @@ var superPower = new SuperPower
     Level = LevelPower.LevelFive
 };
 
-var superMan = new SuperHeroe
-{
-    Id = 1,
-    Name = "Sperma",
-    SecretIdentity = "Clark Kent",
-    City = "Metropolis",
-    Flying = true
-};
+
 
 List<SuperPower> supermanPower = new()
 {
@@ -29,9 +22,17 @@ List<SuperPower> supermanPower = new()
     superPower
 };
 
-superMan.SuperPowers = supermanPower;
+var superMan = new SuperHero
+{
+    Id = 1,
+    Name = "Sperma",
+    SecretIdentity = "Clark Kent",
+    City = "Metropolis",
+    Flying = true,
+    SuperPowers = supermanPower
+};
 
-class SuperHeroe
+class SuperHero
 {
     public int Id;
     public string? Name;
@@ -39,6 +40,13 @@ class SuperHeroe
     public string? City;
     public List<SuperPower>? SuperPowers;
     public bool Flying;
+
+    public SuperHero()
+    {
+        Id = 1;
+        SuperPowers = new List<SuperPower>();
+        Flying = false;
+    }
 }
 
 class SuperPower
@@ -46,6 +54,12 @@ class SuperPower
     public string? Name;
     public string? Description;
     public LevelPower Level;
+
+    public SuperPower()
+    {
+        Level = LevelPower.LevelOne;
+
+    }
 }
 
 enum LevelPower
