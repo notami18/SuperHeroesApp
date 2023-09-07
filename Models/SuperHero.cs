@@ -5,18 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SuperHeroesApp.Interface;
+
 namespace SuperHeroesApp.Models
 {
-    internal class SuperHero : Hero
+    internal class SuperHero : Hero, ISuperHero
     {
         private string? _name;
-        public int Id;
+        public int Id { get; set; }
         public override string Name
         {
             get => _name!;
             set => _name = value.Trim();
         }
-        public string? SecretIdentity;
+        public string? SecretIdentity { get; set; }
 
         public string NombreEIdentidadSerecreta
         {

@@ -1,9 +1,12 @@
-﻿using SuperHeroesApp.Models;
+﻿using SuperHeroesApp;
+using SuperHeroesApp.Models;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
+        var imprimirInfo = new ImprimirInfo();
+
         var canFly = new SuperPower
         {
             Name = "Volar 🥏",
@@ -68,6 +71,8 @@ internal class Program
             SuperPowers = supermanPower
         };
 
+        imprimirInfo.ImPrimirSuperHeroe(superMan);
+
         string resultSuperPower = superMan.UseSuperHero();
         Console.WriteLine(resultSuperPower);
         string resultSalvarMundo = superMan.SaveTheWorld();
@@ -84,6 +89,8 @@ internal class Program
             Flying = false,
             SuperPowers = wolverinePower
         };
+
+        imprimirInfo.ImPrimirSuperHeroe(wolverine);
 
         string resultSuperPowerWolverine = wolverine.UseSuperHero();
         Console.WriteLine($"{resultSuperPowerWolverine}");
